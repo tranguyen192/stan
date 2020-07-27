@@ -1,0 +1,57 @@
+// IMPORT ALL SCSS FILES HERE
+
+// Global
+@import "./assets/styles/variables";
+// @import "styles/_variables.scss";
+@import "./assets/styles/global";
+@import "./assets/styles/fonts";
+@import "./assets/styles/buttons";
+@import "./assets/styles/navbar";
+@import "./assets/styles/form";
+@import "./assets/styles/color-themes";
+@import "./assets/styles/animations";
+@import "./assets/styles/hover-infobox";
+
+// Pages
+@import "pages/add-new-page/add-new-page";
+@import "pages/calendar-page/calendar-page";
+@import "pages/dashboard-page/dashboard-page";
+@import "pages/data-policy-page/data-policy-page";
+@import "pages/exams-page/exams-page";
+@import "pages/imprint-page/imprint-page";
+@import "pages/no-match-page/404-page";
+@import "pages/user-account-page/user-account-page";
+@import "pages/user-account-page/user-account-page-edit";
+@import "pages/login-page/login-page";
+@import "pages/home-page/home-page";
+@import "pages/about-page/about-page";
+
+// Components
+@import "components/add-new/add-new";
+@import "components/login/login";
+@import "components/empty-dashboard/empty-dashboard";
+@import "components/today-goals/today-goals";
+@import "components/exams/exam";
+@import "components/exams/exam-details";
+@import "components/mascots/mascots";
+@import "components/today/today";
+@import "components/progressbar/progress-bar";
+@import "components/current-state/current-state";
+@import "components/error/error";
+@import "components/loading/loading";
+@import "components/today-progress/today-progress";
+@import "components/forgotten-password/forgotten-password";
+
+// Calendar
+@import "~@fullcalendar/core/main.css";
+@import "~@fullcalendar/daygrid/main.css";
+@import "~@fullcalendar/list/main.css";
+
+// Sub-Components
+@import "components/input/input";
+@import "components/label/label";
+@import "components/textarea/textarea";
+@import "components/today-subject/today-subject";
+@import "components/burger-button/burger-button";
+@import "components/backdrop/backdrop";
+@import "components/timeline/timeline";

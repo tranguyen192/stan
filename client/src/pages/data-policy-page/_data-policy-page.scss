@@ -1,0 +1,12 @@
+.data-policy-page {
+  a {
+    border-bottom: 1px solid;
+    border-color: theme-color("dark");
+
+    &:focus,
+    &:active,
+    &:hover {
+      border-color: theme-color("primary-yellow");
+    }
+  }
+}

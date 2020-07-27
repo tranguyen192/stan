@@ -1,0 +1,41 @@
+# Write your query or mutation here
+mutation{
+  login(email: "testUser@node.com", password: "12345678")
+}
+
+
+query {
+  todaysChunks {
+     exam {
+        id
+        subject
+        examDate
+        startDate
+        numberPages
+        # timePerPage
+        timesRepeat
+        currentPage
+        pdfLink
+      }
+      numberPagesToday
+      duration
+      daysLeft
+      totalNumberDays
+      # totalChunks
+      numberPagesWithRepeat
+      notEnoughTime
+    
+  }
+}
+
+
+
+
+
+query{todaysChunksProgress}
+
+
+
+{
+  "Authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTk3NDk5NzQ0ZGJlNTMwNmJmYmUyNmQiLCJ0b2tlblZlcnNpb24iOjIsImlhdCI6MTU4NzQxMzIzMiwiZXhwIjoxNTg3NDE0MTMyfQ.dt9-2FDYMfS1FFZDgq8Rn3eSQ1CnGZk9um35bTW4Q38"
+}

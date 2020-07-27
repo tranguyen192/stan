@@ -1,0 +1,438 @@
+.exams-calendar {
+  &__inner {
+    position: relative;
+    .calendar-table {
+      &__inner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.fc-header-toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .fc-left {
+    padding-bottom: 40px;
+    h2 {
+      margin-top: 5rem;
+      font-family: $font-family-BasierCircle-Bold;
+      @include rem(font-size, $h2-font-size);
+      @include rem(letter-spacing, 0);
+      @include rem(line-height, $h2-line-height);
+
+      @include media-breakpoint-down(sm) {
+        margin-top: 2rem;
+        @include rem(font-size, $h2-font-size-mobile);
+        @include rem(line-height, $h2-line-height-mobile);
+        @include rem(letter-spacing, 0);
+      }
+    }
+  }
+  .fc-right {
+    align-self: flex-end;
+    .fc-button-primary {
+      background: none;
+      border: none;
+      color: theme_color("dark");
+      cursor: pointer;
+      font-family: $font-family-BasierCircle-SemiBold;
+      @include rem(font-size, $h4-font-size);
+      @include rem(letter-spacing, 1px);
+      @include rem(line-height, $h4-line-height);
+
+      @include media-breakpoint-down(sm) {
+        @include rem(font-size, $h4-font-size-mobile);
+        @include rem(line-height, $h4-line-height-mobile);
+        @include rem(letter-spacing, 0.5px);
+      }
+
+      &.fc-next-button,
+      &.fc-prev-button {
+        @include media-breakpoint-down(xs) {
+          margin: 0;
+          padding: 0;
+        }
+      }
+      &.fc-next-button {
+        padding-right: 0;
+        margin-left: 0;
+      }
+      &.fc-prev-button {
+        @include media-breakpoint-down(sm) {
+          padding-right: 12px;
+        }
+      }
+
+      &.fc-dayGridMonth-button,
+      &.fc-listWeek-button,
+      &.fc-today-button {
+        position: relative;
+        padding: 6px 0px;
+        margin: 0 12px;
+        &:after {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          width: 100%;
+          height: 3px;
+          bottom: 0;
+          right: 0;
+          background-color: theme_color("dark");
+          transition: all 0.3s ease-in-out;
+        }
+        &:hover:after {
+          width: 0;
+        }
+
+        @include media-breakpoint-down(xs) {
+          margin-left: 0;
+        }
+      }
+      &.fc-dayGridMonth-button,
+      &.fc-listWeek-button {
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+
+      &:focus,
+      &:active {
+        box-shadow: none;
+        color: theme-color("primary-yellow");
+
+        &::after {
+          background-color: theme-color("primary-yellow");
+        }
+      }
+
+      &:focus {
+        outline: 3px solid theme-color("primary-yellow");
+      }
+
+      .fc-icon {
+        font-size: 2em;
+
+        &.fc-icon-chevron-right {
+          @include media-breakpoint-down(xs) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    .fc-button:disabled {
+      opacity: 1;
+    }
+  }
+}
+
+// calendar table
+.fc-unthemed th,
+.fc-unthemed td,
+.fc-unthemed thead,
+.fc-unthemed tbody,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-row,
+.fc-unthemed .fc-content,
+.fc-unthemed .fc-popover,
+.fc-unthemed .fc-list-view,
+.fc-unthemed .fc-list-heading td {
+  border-color: theme_color("dark");
+}
+
+.fc-week-number {
+  padding: 0 2px;
+}
+// box content
+.fc-view {
+  padding: 3px;
+  padding-right: 2px;
+  margin-bottom: 40px;
+  border: 4px solid;
+  border-color: theme-color("dark");
+  box-shadow: 10px 10px 0px -2px theme-color("dark");
+
+  &.fc-dayGridMonth-view {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+}
+
+// table header
+.fc-day-header {
+  text-transform: lowercase;
+  span {
+    font-family: $font-family-BasierCircle-SemiBold;
+    @include rem(font-size, $h5-font-size);
+    @include rem(letter-spacing, 0);
+    @include rem(line-height, $h5-line-height);
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $h5-font-size-mobile);
+      @include rem(line-height, $h5-line-height-mobile);
+      @include rem(letter-spacing, 0);
+    }
+  }
+}
+
+// current day
+.fc-unthemed td.fc-today {
+  background-color: theme_color("primary-yellow");
+}
+
+// day number in grid
+.fc-dayGrid-view .fc-week-number,
+.fc-dayGrid-view .fc-day-number {
+  padding-right: 5px;
+  font-family: $font-family-BasierCircle-SemiBold;
+  @include rem(font-size, $font-size-16);
+  letter-spacing: 0;
+  @include rem(line-height, 22px);
+  margin: 0;
+  max-width: 65ch;
+
+  @include media-breakpoint-down(sm) {
+    @include rem(font-size, $font-size-14);
+    @include rem(line-height, 18px);
+  }
+}
+.fc td.fc-today {
+  border-style: solid;
+}
+
+// event chunk
+.fc-day-grid-event {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+.fc th,
+.fc td {
+  border-width: 3px;
+}
+
+// list view
+.fc-list-table {
+  border-top: 3px solid theme_color("dark");
+}
+
+.fc-listWeek-view {
+  min-height: 70px;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+
+  @include media-breakpoint-down(lg) {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+// empty list
+.fc-list-empty {
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: transparent;
+  font-family: $font-family-BasierCircle-Bold;
+  @include rem(font-size, $h3-font-size);
+  @include rem(letter-spacing, 1.5px);
+  @include rem(line-height, $h3-line-height);
+
+  @include media-breakpoint-down(sm) {
+    @include rem(font-size, $h3-font-size-mobile);
+    @include rem(line-height, $h3-line-height-mobile);
+    @include rem(letter-spacing, 1px);
+  }
+}
+
+.fc-unthemed .fc-list-empty {
+  background-color: transparent;
+}
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-popover .fc-header,
+.fc-unthemed .fc-list-heading td {
+  background-color: theme_color("light");
+}
+.fc-list-heading-main,
+.fc-list-heading-alt {
+  text-transform: lowercase;
+
+  font-family: $font-family-BasierCircle-SemiBold;
+  @include rem(font-size, $h5-font-size);
+  @include rem(letter-spacing, 0);
+  @include rem(line-height, $h5-line-height);
+
+  @include media-breakpoint-down(sm) {
+    @include rem(font-size, $h5-font-size-mobile);
+    @include rem(line-height, $h5-line-height-mobile);
+    @include rem(letter-spacing, 0);
+  }
+}
+.fc-list-item {
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+.fc-basic-view .fc-body .fc-row {
+  min-height: 3em !important;
+}
+
+// displays exam deadline
+.fade.show {
+  @include rem(font-size, 12px);
+  @include rem(letter-spacing, 0.5px);
+  font-family: $font-family-BasierCircle-SemiBold;
+  text-transform: lowercase;
+  z-index: 1;
+  border: 1.5px solid;
+  color: theme-color("dark");
+  border-color: theme-color("dark");
+  padding: 2px 5px;
+  background-color: theme-color("light");
+}
+
+// popup
+.fade.show.popover {
+  border: 2px solid;
+  border-color: theme_color("dark");
+  border-radius: 0;
+  min-width: 320px;
+  background-color: theme-color("light");
+}
+.popover-header {
+  background-color: transparent;
+  border-bottom: 2px solid;
+  border-color: theme_color("dark");
+}
+
+.bs-popover-top > .arrow::before,
+.bs-popover-auto[x-placement^="top"] > .arrow::before {
+  border-top-color: theme_color("dark");
+}
+.bs-popover-top > .arrow::after,
+.bs-popover-auto[x-placement^="top"] > .arrow::after {
+  border-width: 0.5rem 0.5rem 3px;
+}
+
+#popover-basic {
+  .exam-date,
+  .current-page,
+  .total-pages-left,
+  .pages-per-day,
+  .duration-per-day,
+  .duration-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .link {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      text-decoration: underline;
+      text-align: right;
+    }
+  }
+
+  .exam-date {
+    p {
+      font-weight: 800;
+      color: theme_color("error-hover");
+    }
+  }
+
+  .popover-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .close-calendar-popup {
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    &:before {
+      height: 3px;
+      width: 15px;
+    }
+    &:after {
+      height: 3px;
+      width: 15px;
+    }
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
+
+  .exam-deadline {
+    display: flex;
+    justify-content: center;
+  }
+}
+.fc-unthemed .fc-list-item:hover td {
+  background: none;
+}
+
+// exam date color
+.fc-center {
+  position: relative;
+}
+.fc-toolbar .fc-center:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 85, 77);
+  position: absolute;
+  top: 0;
+}
+.fc-toolbar .fc-center:after {
+  content: "exam date";
+  padding-left: 30px;
+  width: 140px;
+
+  font-family: $font-family-BasierCircle-SemiBold;
+  @include rem(font-size, $h4-font-size);
+  @include rem(letter-spacing, 1px);
+  @include rem(line-height, $h4-line-height);
+
+  @include media-breakpoint-down(sm) {
+    @include rem(font-size, $h4-font-size-mobile);
+    @include rem(line-height, $h4-line-height-mobile);
+    @include rem(letter-spacing, 0.5px);
+  }
+}
+
+// show more popup
+.fc-unthemed .fc-popover {
+  border-width: 3px;
+}
+.fc-popover .fc-header .fc-close {
+  opacity: 1;
+}
+.fc-popover {
+  .fc-header {
+    border-bottom: 2px solid theme_color("black");
+  }
+}
+.fc-more {
+  font-size: 12px !important;
+}
+
+#exam-deadline {
+  min-width: 120px;
+  font-size: 16px;
+  padding: 10px;
+}

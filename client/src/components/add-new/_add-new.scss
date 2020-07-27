@@ -1,0 +1,15 @@
+.add-new {
+  padding: 20px;
+  max-width: 80rem;
+
+  .container-fluid {
+    padding: 0;
+  }
+  &__heading {
+    font-family: $font-family-BasierCircle-Bold;
+    border-bottom: 3px solid;
+    border-color: theme-color("dark");
+    padding: 5px 0;
+    margin: 5px;
+  }
+}

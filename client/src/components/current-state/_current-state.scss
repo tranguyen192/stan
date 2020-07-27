@@ -1,0 +1,51 @@
+.current-state {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  border-bottom: 3px solid;
+  border-color: theme_color("dark");
+  margin: 0 0 0 auto;
+  width: fit-content;
+
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 50px;
+    flex-direction: column;
+  }
+
+  @include media-breakpoint-down(sm) {
+    flex-direction: row-reverse;
+    margin-top: 2rem;
+  }
+
+  &__mascot {
+    &:hover {
+      animation: shake 0.5s;
+      animation-iteration-count: infinite;
+    }
+  }
+  &__motivation {
+    padding: 10px 10px;
+
+    @include media-breakpoint-down(lg) {
+      padding-right: 0;
+    }
+  }
+
+  .carousel {
+    margin: 45px 0 0;
+    padding: 10px 0;
+    height: 170px;
+    width: 120px;
+    display: flex;
+    align-items: flex-end;
+
+    .carousel-inner {
+      &:after {
+        display: none;
+      }
+    }
+    &.slide {
+      width: 160px;
+    }
+  }
+}

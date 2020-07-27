@@ -1,0 +1,7 @@
+{
+  "name": "STAN",
+  "description": "STAN is a study planner app.",
+  "keywords": ["study", "organise", "school", "university"],
+  "repository": "https://gitlab.mediacube.at/fhs41216/mmp3-stan",
+  "logo": "./logo.png"
+}

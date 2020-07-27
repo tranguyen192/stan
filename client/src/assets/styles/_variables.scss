@@ -1,0 +1,125 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+$theme-colors: (
+  primary-yellow: #fec902,
+  primary-yellow-dark: #ea6e10,
+  primary-yellow-darker: #c15b0e,
+  primary-blue: #bce0f8,
+  primary-blue-dark: #03719e,
+  light: #ffffff,
+  dark: #000000,
+  grey-light: #f2f2f2,
+  grey-dark: #979797,
+  dark-mode: #101926,
+  error: #ec634c,
+  error-hover: #e9444f,
+  success: #a9bf16,
+  success-hover: #5b7429,
+);
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+/* font-size */
+$font-size-14: 14px;
+$font-size-16: 16px;
+$font-size-18: 18px;
+$font-size-20: 20px;
+$font-size-24: 24px;
+$font-size-30: 30px;
+$font-size-40: 40px;
+$font-size-60: 60px;
+$font-size-80: 80px;
+
+/* font-size h-tags */
+$h1-font-size: 100px;
+$h2-font-size: 82px;
+$h3-font-size: 24px;
+$h4-font-size: 18px;
+$h5-font-size: 16px;
+
+/* font-size h-tags mobile */
+$h1-font-size-mobile: 80px;
+$h2-font-size-mobile: 52px;
+$h3-font-size-mobile: 18px;
+$h4-font-size-mobile: 16px;
+$h5-font-size-mobile: 14px;
+
+/* line-height h-tags */
+$h1-line-height: 110px;
+$h2-line-height: 92px;
+$h3-line-height: 30px;
+$h4-line-height: 22px;
+$h5-line-height: 24px;
+
+/* line-height h-tags mobile */
+$h1-line-height-mobile: 90px;
+$h2-line-height-mobile: 65px;
+$h3-line-height-mobile: 28px;
+$h4-line-height-mobile: 20px;
+$h5-line-height-mobile: 20px;
+
+/* font-family */
+$font-family-BasierCircle-Regular: "Basier Circle", sans-serif;
+$font-family-BasierCircle-SemiBold: "Basier Circle Semi-Bold", sans-serif;
+$font-family-BasierCircle-Bold: "Basier Circle Bold", sans-serif;
+$font-family-OpenSans-Regular: "Open Sans", sans-serif;
+
+/* Convert font-size from PX to REM with PX fallback */
+$baseFontSize: 16;
+
+@function parse-int($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+  $px: ();
+  $rem: ();
+
+  $root: $baseFontSize;
+
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $px: append($px, $value);
+      $rem: append($rem, $value);
+    } @else if type-of($value) == number {
+      $unit: unit($value);
+      $val: parse-int($value);
+
+      @if $unit == "px" {
+        $px: append($px, $value);
+        $rem: append($rem, ($val / $root + rem));
+      }
+
+      @if $unit == "rem" {
+        $px: append($px, ($val * $root + px));
+        $rem: append($rem, $value);
+      }
+    } @else {
+      $px: append($px, $value);
+      $rem: append($rem, $value);
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}
+
+@function rem($value) {
+  $root: $baseFontSize;
+  $val: parse-int($value);
+  $return: ();
+
+  @if unit($value) == "px" {
+    $return: append($return, ($val / $root + rem));
+  } @else {
+    $return: append($return, ($val * $root + px));
+  }
+
+  @return $return;
+}

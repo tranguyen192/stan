@@ -1,0 +1,79 @@
+.burger {
+  padding: 15px 25px;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  right: 0;
+  background-color: theme_color("light");
+  z-index: 999;
+  width: 100%;
+  border-bottom: 4px solid;
+  border-color: theme_color("dark");
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+
+  &__logo {
+    width: 35%;
+  }
+  .open-burger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .close-burger {
+    z-index: 300;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .line-1 {
+      transform: rotate(45deg);
+    }
+    .line-2 {
+      width: 0%;
+      opacity: 0;
+    }
+    .line-3 {
+      transform: rotate(-45deg);
+    }
+
+    .burger__btn__line {
+      @include media-breakpoint-down(sm) {
+        transition-delay: 0.3s;
+      }
+    }
+  }
+
+  &__btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 35px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+
+    &__line {
+      display: block;
+      border-radius: 0;
+      background: theme-color("dark");
+      height: 4px;
+      width: 33px;
+      transform: rotate(0deg);
+      transition: 0.3s ease-in-out;
+      transform-origin: left center;
+    }
+
+    @include media-breakpoint-down(md) {
+      display: flex;
+    }
+  }
+}

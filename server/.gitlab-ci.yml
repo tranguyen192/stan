@@ -1,0 +1,93 @@
+image: node:latest
+
+npm:server:
+  tags:
+    - node
+  stage: npm
+  artifacts:
+    paths:
+      - server/node_modules/
+    expire_in: 1 days
+    when: always
+
+  script:
+    - cd server/
+    - echo "Running npm ci ..."
+    - npm ci
+  except:
+    - /^front-feature.*$/
+
+lint:server:
+  stage: lint
+  tags:
+    - node
+  script:
+    - cd server/
+    - echo "Linting.."
+    - npm run lintFix
+  except:
+    - /^front-feature.*$/
+    - /^back-feature.*$/
+
+unit-testing:server:
+  stage: test
+  tags:
+    - node
+  variables:
+    ACCESS_TOKEN_SECRET: "(slkjdfpowefs-dopioufsdgsf$%&)sdlkngfsjdgsdf6573(45hru8§-§)$%lk4fwj9$3jhwo849ufepodv"
+    REFRESH_TOKEN_SECRET: "klsd-jfoisjepeodfj!slkdghjsdg345678ceu-sdf2345§rhfs%%$%/(/&werldfgkhjkjpiodjfoieahf"
+  script:
+    - cd server/
+    - echo "Running unit tests ..."
+    - ./node_modules/.bin/jest ./tests/unit/
+  except:
+    - /^front-feature.*$/
+
+integration-testing:server:
+  stage: test
+  tags:
+    - node
+  variables:
+    ACCESS_TOKEN_SECRET: "(slkjdfpowefs-dopioufsdgsf$%&)sdlkngfsjdgsdf6573(45hru8§-§)$%lk4fwj9$3jhwo849ufepodv"
+    REFRESH_TOKEN_SECRET: "klsd-jfoisjepeodfj!slkdghjsdg345678ceu-sdf2345§rhfs%%$%/(/&werldfgkhjkjpiodjfoieahf"
+    FORGOTTEN_PASSWORD_SECRET: "slhdfkjshadjfkh3458zt98rdhkjsh587teriusdhf4ter-qvwkjg478f-wer_Wti3u4434345535t"
+    CLIENT_URL: "http://localhost:3000"
+  script:
+    - cd server/
+    - echo "Running integration tests ..."
+    - ./node_modules/.bin/jest ./tests/integration/
+  except:
+    - /^front-feature.*$/
+
+staging:server:
+  stage: staging server
+  tags:
+    - node
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - cd server/
+    - dpl --provider=heroku --app=$HEROKU_APP_STAGING --api-key=$HEROKU_API_KEY --skip-cleanup
+  dependencies:
+    - staging:client
+  only:
+    - development
+
+deployment:server:
+  stage: deployment server
+  tags:
+    - node
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - cd server/
+    - dpl --provider=heroku --app=$HEROKU_APP_DEPLOYMENT --api-key=$HEROKU_API_KEY --skip-cleanup
+  dependencies:
+    - deployment:client
+  only:
+    - master
+    - /^release.*$/

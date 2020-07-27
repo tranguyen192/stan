@@ -1,0 +1,98 @@
+.mascots {
+  &__heading {
+    padding-bottom: 20px;
+  }
+  &__inner {
+    &--form {
+      padding: 30px;
+      &__sub-heading {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      &__button {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+// BOOTSTRAP MASCOT
+.carousel {
+  height: 320px;
+
+  @include media-breakpoint-down(lg) {
+    height: 250px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    height: 210px;
+  }
+
+  img {
+    width: 280px !important;
+
+    @include media-breakpoint-down(lg) {
+      width: 220px !important;
+    }
+  }
+  .carousel-indicators {
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+    li {
+      background-color: theme_color("dark");
+      height: 6px;
+      &:before {
+        content: "";
+        padding: 0;
+      }
+    }
+  }
+  .carousel-inner {
+    text-align: center;
+  }
+  .carousel-control-prev-icon {
+    background-image: none;
+    &:before {
+      content: "";
+      margin: 0;
+      border: solid;
+      border-color: theme_color("dark");
+      border-width: 0 5px 5px 0;
+      display: inline-block;
+      padding: 10px;
+      transform: rotate(135deg);
+
+      @include media-breakpoint-down(xs) {
+        padding: 5px;
+        border-width: 0 2.5px 2.5px 0;
+      }
+    }
+  }
+  .carousel-control-next {
+    background-image: none;
+    &:before {
+      content: "";
+      margin: 0;
+      border: solid;
+      border-color: theme_color("dark");
+      border-width: 0 5px 5px 0;
+      display: inline-block;
+      padding: 10px;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease-out;
+
+      @include media-breakpoint-down(xs) {
+        padding: 5px;
+        border-width: 0 2.5px 2.5px 0;
+      }
+    }
+
+    .carousel-control-next-icon {
+      display: none;
+    }
+  }
+}

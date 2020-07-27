@@ -1,0 +1,28 @@
+.home {
+  @include media-breakpoint-down(md) {
+    padding: 0 30px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 0 20px;
+  }
+  .container-fluid {
+    padding: 0;
+  }
+  &__heading {
+    margin-bottom: 30px;
+  }
+  &__text {
+    margin-bottom: 15px;
+  }
+  &__list {
+    margin: 20px 0 45px;
+    padding: 0;
+  }
+  &__btn {
+    margin-bottom: 50px;
+  }
+
+  #tsparticles {
+    height: 100vh;
+  }
+}

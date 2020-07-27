@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.66 49.71">
+  <defs>
+    <style>
+      .cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:1.5px}
+    </style>
+  </defs>
+  <g id="Ebene_2" data-name="Ebene 2">
+    <g id="Ebene_2-2" data-name="Ebene 2">
+      <path class="cls-1" d="M11.72 15.56V5.38h24.32l7.87 6.98v33.05H29.57"/>
+      <path class="cls-1" d="M43.91 12.36l-6.99-.12-.88-6.86"/>
+      <circle class="cls-1" cx="19" cy="31.47" r="17.49"/>
+      <circle class="cls-1" cx="19" cy="31.47" r="16.17"/>
+      <path class="cls-1" d="M27.76 26.47l-7.27 4.2"/>
+      <circle class="cls-1" cx="19" cy="31.47" r="1.64"/>
+      <path class="cls-1" d="M16.63 13.97v-3.2h4.72v3.36M4.98 20.9l-2.27-2.27 3.34-3.33 2.38 2.37M29.62 17.5l2.27-2.26 3.34 3.34-2.38 2.37M4.39 7.62s3.19-9.1 10-6.36C18.59 3 19.06 6 19.05 10.77"/>
+      <path d="M0 6.03h1.59v1.59H0z"/>
+      <path transform="rotate(45 1.945 9.646)" d="M1.15 8.85h1.59v1.59H1.15z"/>
+      <path d="M3.98 9.65h1.59v1.59H3.98z"/>
+      <path transform="rotate(-45 7.574 9.643)" d="M6.78 8.84h1.59v1.59H6.78z"/>
+      <path transform="rotate(-90 8.735 6.825)" d="M7.94 6.03h1.59v1.59H7.94z"/>
+      <path transform="rotate(45 1.958 4.011)" d="M1.16 3.21h1.59V4.8H1.16z"/>
+    </g>
+  </g>
+</svg>

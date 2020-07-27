@@ -1,0 +1,18 @@
+.no-match {
+  &__sub-headline {
+    padding: 50px 0px 10px 0px;
+  }
+  &__content {
+    padding-bottom: 20px;
+  }
+  &__mascot {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+
+    &--img {
+      width: 250px;
+    }
+  }
+}

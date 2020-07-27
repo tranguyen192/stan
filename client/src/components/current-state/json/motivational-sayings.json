@@ -1,0 +1,80 @@
+[
+  {
+    "id": 0,
+    "mood": "very happy",
+    "motivation": "Be proud of yourself."
+  },
+  {
+    "id": 1,
+    "mood": "very happy",
+    "motivation": "You are the best. You can do it."
+  },
+  {
+    "id": 2,
+    "mood": "very happy",
+    "motivation": "You are a good reason to be happy."
+  },
+  {
+    "id": 0,
+    "mood": "happy",
+    "motivation": "Study hard. Do good and the good life will follow."
+  },
+  {
+    "id": 1,
+    "mood": "happy",
+    "motivation": "You are not here to be average. You are here to be awesome. Keep going!"
+  },
+  {
+    "id": 2,
+    "mood": "happy",
+    "motivation": "One day, you will say, you made it."
+  },
+
+  {
+    "id": 0,
+    "mood": "okay",
+    "motivation": "Believe you can and you’re halfway there."
+  },
+  {
+    "id": 1,
+    "mood": "okay",
+    "motivation": "If it’s important to you, you’ll find a way. If not, you’ll find an excuse."
+  },
+  {
+    "id": 2,
+    "mood": "okay",
+    "motivated": "Great things never come from comfort zones."
+  },
+
+  {
+    "id": 0,
+    "mood": "stressed",
+    "motivation": "It always seems impossible, until it's done."
+  },
+  {
+    "id": 1,
+    "mood": "stressed",
+    "motivation": "The expert in everything was once a beginner."
+  },
+  {
+    "id": 2,
+    "mood": "stressed",
+    "motivation": "Don’t talk, just act. Don’t say, just show. Don’t promise, just prove."
+  },
+
+  {
+    "id": 0,
+    "mood": "very stressed",
+    "motivation": "You don’t have to be great to start, but you have to start to be great."
+  },
+  {
+    "id": 1,
+    "mood": "very stressed",
+    "motivation": "Push yourself, because no one else is going to do it for you."
+  },
+  {
+    "id": 2,
+    "mood": "very stressed",
+    "motivation": "Sometimes later becomes never. Do it now."
+  }
+]

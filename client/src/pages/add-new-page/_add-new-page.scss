@@ -1,0 +1,18 @@
+.add-new-page {
+  &__heading {
+  }
+  &__sub-heading {
+    color: theme-color("primary-blue-dark");
+    font-family: $font-family-BasierCircle-SemiBold;
+    @include rem(font-size, $font-size-20);
+    @include rem(letter-spacing, 2px);
+    @include rem(line-height, 32px);
+    margin-bottom: 50px;
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $font-size-18);
+      @include rem(line-height, 30px);
+      margin-bottom: 25px;
+    }
+  }
+}

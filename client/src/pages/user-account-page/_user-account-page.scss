@@ -1,0 +1,131 @@
+.user-account {
+  &__headline {
+    padding-bottom: 60px;
+    word-break: normal;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 40px;
+    }
+
+    h2 {
+      hyphens: auto;
+      word-break: break-word;
+    }
+  }
+  &__container {
+    &--left {
+      &--top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @include media-breakpoint-down(lg) {
+          flex-direction: column-reverse;
+        }
+
+        .user-data {
+          display: flex;
+          flex-direction: column;
+          word-break: break-all;
+          padding: 40px 20px 40px 40px;
+
+          @include media-breakpoint-down(lg) {
+            padding: 10px 40px 40px;
+          }
+          @include media-breakpoint-down(md) {
+            padding: 30px;
+          }
+        }
+        .button {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          padding: 10px;
+
+          a {
+            border: none;
+            text-transform: lowercase;
+            transition: all 0.3s ease;
+            background: none;
+
+            &:hover {
+              color: theme_color("primary-yellow");
+            }
+
+            // font styling
+            font-family: $font-family-OpenSans-Regular;
+            @include rem(font-size, $font-size-16);
+            letter-spacing: 0;
+            @include rem(line-height, 22px);
+            margin: 0;
+            max-width: 65ch;
+
+            @include media-breakpoint-down(sm) {
+              @include rem(font-size, $font-size-14);
+              @include rem(line-height, 18px);
+            }
+          }
+        }
+      }
+      &--bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 40px;
+
+        @include media-breakpoint-down(lg) {
+          flex-direction: column;
+          padding: 20px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          flex-direction: row;
+        }
+
+        @include media-breakpoint-down(xs) {
+          flex-direction: column;
+        }
+
+        // font styling
+        .total-exam,
+        .finished-exam {
+          padding: 10px;
+
+          p {
+            text-align: center;
+          }
+
+          span {
+            display: flex;
+            justify-content: center;
+            color: theme_color("primary-blue-dark");
+            font-family: $font-family-BasierCircle-Bold;
+            @include rem(font-size, $h1-font-size);
+            @include rem(line-height, $h1-line-height);
+            @include rem(letter-spacing, 0);
+
+            @include media-breakpoint-down(sm) {
+              @include rem(font-size, $h1-font-size-mobile);
+              @include rem(line-height, $h1-line-height-mobile);
+              @include rem(letter-spacing, 0);
+            }
+          }
+        }
+      }
+    }
+
+    &--right {
+      &--top {
+        padding: 43px;
+        margin-bottom: 32px !important;
+      }
+      &--bottom {
+        .carousel {
+          height: auto;
+          margin-top: 20px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+}

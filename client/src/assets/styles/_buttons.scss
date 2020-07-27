@@ -1,0 +1,128 @@
+// black in light theme
+.stan-btn-primary {
+  display: flex;
+  background-color: theme-color("dark");
+  border: 3px solid;
+  border-color: theme-color("dark");
+  color: theme-color("light");
+  font-family: $font-family-BasierCircle-SemiBold;
+  @include rem(font-size, $font-size-16);
+  @include rem(letter-spacing, 2px);
+  @include rem(line-height, 20px);
+  text-transform: uppercase;
+  padding: 15px 20px;
+  min-width: 200px;
+  transition: all 200ms ease-in-out;
+  justify-content: center;
+  width: fit-content;
+
+  @include media-breakpoint-down(sm) {
+    @include rem(font-size, $font-size-14);
+    @include rem(letter-spacing, 1.5px);
+    @include rem(line-height, 20px);
+    width: 100%;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: theme-color("light");
+    color: theme-color("dark");
+    transform: scale(1.04);
+  }
+}
+
+// white + black border in light theme
+.stan-btn-secondary {
+  display: flex;
+  background-color: theme-color("light");
+  border: 3px solid;
+  border-color: theme-color("dark");
+  color: theme-color("dark");
+  font-family: $font-family-BasierCircle-SemiBold;
+  @include rem(font-size, $font-size-16);
+  @include rem(letter-spacing, 2px);
+  @include rem(line-height, 20px);
+  text-transform: uppercase;
+  padding: 15px 20px;
+  min-width: 200px;
+  transition: all 200ms ease-in-out;
+  justify-content: center;
+  width: fit-content;
+
+  @include media-breakpoint-down(sm) {
+    @include rem(font-size, $font-size-14);
+    @include rem(letter-spacing, 1.5px);
+    @include rem(line-height, 20px);
+    width: 100%;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: theme-color("dark");
+    color: theme-color("light");
+    transform: scale(1.04);
+  }
+}
+
+// logged out w/ hover animation
+.stan-btn-double {
+  display: flex;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  background-color: theme-color("light");
+  border: 2px solid;
+  border-color: theme-color("dark");
+  box-shadow: 5px 5px 0px 0px theme-color("dark");
+  font-family: $font-family-BasierCircle-SemiBold;
+  @include rem(font-size, $font-size-16);
+  @include rem(letter-spacing, 2px);
+  @include rem(line-height, 20px);
+  transition: all 300ms ease-in-out;
+  justify-content: center;
+  width: fit-content;
+
+  @include media-breakpoint-down(xs) {
+    @include rem(font-size, $font-size-14);
+    @include rem(letter-spacing, 1.5px);
+    @include rem(line-height, 20px);
+    width: 100%;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: 8px 8px 0px 0px theme-color("dark");
+    color: theme-color("dark");
+  }
+}
+
+// dark mode
+.dark-mode-btn {
+  text-transform: uppercase;
+  padding: 0;
+  font-family: $font-family-BasierCircle-SemiBold;
+  @include rem(letter-spacing, 1px);
+  @include rem(font-size, $font-size-16);
+  background: transparent;
+  border: none;
+  color: theme-color("dark");
+  transition: all 300ms ease-in-out;
+  margin: 0 0 15px 8px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: theme-color("primary-yellow");
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 3px solid theme-color("primary-yellow");
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include rem(font-size, $font-size-14);
+  }
+}

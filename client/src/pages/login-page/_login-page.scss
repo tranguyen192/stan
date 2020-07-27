@@ -1,0 +1,16 @@
+.login {
+  &__headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__sub-heading {
+      padding: 15px;
+      text-align: center;
+    }
+  }
+  &__form-container {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,110 @@
+.exams {
+  &__past-exams-heading {
+    margin-top: 0;
+    font-family: $font-family-BasierCircle-Bold;
+    @include rem(font-size, $h3-font-size);
+    @include rem(letter-spacing, 1.5px);
+    @include rem(line-height, $h3-line-height);
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $h3-font-size-mobile);
+      @include rem(line-height, $h3-line-height-mobile);
+      @include rem(letter-spacing, 1px);
+    }
+  }
+
+  &__headline {
+    padding-bottom: 40px;
+  }
+
+  &__empty {
+    &__content {
+      padding: 50px;
+      text-align: center;
+      margin-bottom: 40px;
+
+      &--text {
+        padding: 25px 0;
+      }
+      &--btn {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &--pastExams {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+  }
+
+  &__currentExams {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 80px;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-down(sm) {
+      justify-content: center;
+    }
+  }
+  &__archiveExams {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .exam {
+      transition: all 0.3s ease;
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__archiveExamsToggle {
+    padding: 20px 0;
+
+    &--button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: none;
+      color: theme-color("dark");
+      transition: all 0.3s ease;
+      background: none;
+      padding: 0;
+
+      &:focus {
+        outline: none;
+        border-bottom: 3px solid theme-color("primary-yellow");
+      }
+
+      i {
+        border: solid;
+        border-color: theme_color("dark");
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        margin-bottom: -3px;
+        margin-left: 10px;
+
+        @include media-breakpoint-down(sm) {
+          margin-bottom: 2px;
+        }
+      }
+
+      .arrow {
+        transition: transform 0.2s;
+      }
+      .right {
+        transform: rotate(-45deg);
+      }
+      .down {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,343 @@
+.today-component-container {
+  margin-left: -16px;
+  max-width: 52rem;
+
+  @include media-breakpoint-down(lg) {
+    max-width: 100%;
+    margin: 0 10px 0px 0;
+  }
+  @include media-breakpoint-down(md) {
+    margin: 0;
+  }
+}
+
+.today,
+.today.box-content {
+  padding-bottom: 10px;
+  border: 4px solid theme-color("primary-yellow-dark");
+  box-shadow: 10px 10px 0px -2px theme-color("primary-yellow-dark");
+  background-color: theme-color("light");
+  transition: background-color 300ms ease-in-out;
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  &__container {
+    padding: 10px 10px 0 10px;
+
+    &__header {
+      border-bottom: 3px solid;
+      border-color: theme-color("dark");
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__heading {
+        @include media-breakpoint-down(sm) {
+          &::after {
+            content: ",";
+          }
+        }
+      }
+
+      &__deadline {
+        margin-left: 10px;
+        display: flex;
+        align-items: baseline;
+
+        &__text {
+          margin-right: 10px;
+          font-family: $font-family-BasierCircle-Bold;
+          @include rem(font-size, $font-size-20);
+          @include rem(line-height, 26px);
+          @include rem(letter-spacing, 1px);
+
+          @include media-breakpoint-down(sm) {
+            @include rem(font-size, $font-size-18);
+            @include rem(line-height, 24px);
+            @include rem(letter-spacing, 0.5px);
+          }
+        }
+        &__date {
+        }
+      }
+    }
+
+    &__content {
+      padding: 10px 20px;
+
+      @include media-breakpoint-down(xs) {
+        padding: 10px 0px;
+      }
+
+      &__label {
+        padding-right: 8px;
+      }
+      &__text {
+        font-family: $font-family-BasierCircle-Bold;
+        @include rem(letter-spacing, 0.5px);
+
+        &--big {
+          font-family: $font-family-BasierCircle-Bold;
+          @include rem(font-size, $font-size-18);
+          @include rem(line-height, 24px);
+          @include rem(letter-spacing, 0.5px);
+          hyphens: auto;
+          word-break: break-word;
+
+          @include media-breakpoint-down(sm) {
+            @include rem(font-size, $font-size-14);
+            @include rem(line-height, 18px);
+          }
+        }
+
+        &--warning {
+          font-family: $font-family-BasierCircle-SemiBold;
+          @include rem(font-size, $font-size-14);
+          @include rem(line-height, 18px);
+          @include rem(letter-spacing, 0.5px);
+          color: theme-color("error-hover");
+          text-align: right;
+
+          @include media-breakpoint-down(xs) {
+            text-align: center;
+          }
+        }
+      }
+
+      &__layout {
+        display: flex;
+        justify-content: space-between;
+
+        @include media-breakpoint-down(xs) {
+          flex-direction: column-reverse;
+        }
+      }
+
+      &__subject {
+        margin: 10px 0;
+        width: 100%;
+      }
+
+      &__warning {
+        margin: 10px 0 10px 10px;
+
+        @include media-breakpoint-down(xs) {
+          margin: 6px 0;
+        }
+      }
+
+      &__details {
+        margin: 10px 50px 10px 0;
+
+        @include media-breakpoint-down(xl) {
+          margin: 10px 10px 10px 0;
+        }
+        @include media-breakpoint-down(lg) {
+          margin: 10px 50px 10px 0;
+        }
+        @include media-breakpoint-down(xs) {
+          margin: 0 0 3px;
+        }
+
+        &__goal {
+          margin: 0 0 3px 0;
+          display: flex;
+
+          @media (max-width: 1545px) {
+            flex-direction: column;
+            margin-top: 10px;
+          }
+          @include media-breakpoint-down(lg) {
+            flex-direction: row;
+            margin-top: 0;
+            padding-right: 10px;
+          }
+        }
+
+        &__duration {
+          display: flex;
+
+          @media (max-width: 1545px) {
+            flex-direction: column;
+            margin-top: 10px;
+          }
+          @include media-breakpoint-down(lg) {
+            flex-direction: row;
+            margin-top: 0;
+          }
+        }
+
+        &__total-pages {
+          margin: 0 0 3px 0;
+          display: flex;
+          justify-content: space-between;
+
+          @media (max-width: 1545px) {
+            margin-top: 10px;
+            align-items: flex-start;
+          }
+          @include media-breakpoint-down(lg) {
+            flex-direction: row;
+            margin-top: 0;
+          }
+
+          .today-info-circle-container {
+            display: flex;
+            flex-direction: row;
+
+            @media (max-width: 1545px) {
+              flex-direction: column;
+            }
+            @include media-breakpoint-down(lg) {
+              flex-direction: row;
+            }
+          }
+          .info-circle {
+            margin: 2px 2px 2px 10px;
+          }
+        }
+
+        &__repetition {
+          display: flex;
+
+          @media (max-width: 1380px) {
+            flex-direction: column;
+            margin-top: 10px;
+          }
+          @include media-breakpoint-down(lg) {
+            flex-direction: row;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    &__days-left {
+      @include media-breakpoint-down(xs) {
+        margin: 10px 0;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 20px;
+
+      @include media-breakpoint-down(xs) {
+        flex-direction: column-reverse;
+        margin-top: 10px;
+      }
+
+      &__open {
+        border-bottom: 1.5px solid;
+        border-color: theme-color("dark");
+        min-width: fit-content;
+
+        @include media-breakpoint-down(xs) {
+          align-self: flex-start;
+          margin-top: 10px;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-bottom: 1.5px solid;
+          border-color: theme-color("primary-yellow");
+        }
+      }
+
+      &__submit-all {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin: 10px 0 0 0;
+
+        &__all-done {
+          margin-left: 10px;
+
+          @include media-breakpoint-down(xs) {
+            width: 100%;
+          }
+          &__btn {
+            // min-width: 150px;
+          }
+        }
+      }
+
+      &__submit {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+
+        @include media-breakpoint-down(sm) {
+          width: 100%;
+        }
+
+        &__form {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          margin: 0 0 15px 0;
+
+          @include media-breakpoint-down(sm) {
+            width: 100%;
+            justify-content: flex-end;
+          }
+
+          .error {
+            margin: 2px 0 0;
+          }
+
+          &__elements-container {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            margin: 12px 15px 0 0;
+
+            &__elements {
+              display: flex;
+              align-items: center;
+
+              &__container {
+                display: flex;
+                flex-direction: column;
+              }
+
+              &__label {
+                @include media-breakpoint-down(xs) {
+                  @include rem(font-size, 15px);
+                }
+              }
+
+              &__input {
+                min-width: initial;
+                width: 60px;
+                margin: 0 0 0 10px;
+
+                @include media-breakpoint-down(xs) {
+                  margin: 0 7px;
+                }
+              }
+            }
+          }
+          &__btn {
+            min-width: initial;
+            padding: 7px 12px;
+            @include rem(font-size, 14px);
+
+            @include media-breakpoint-down(sm) {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

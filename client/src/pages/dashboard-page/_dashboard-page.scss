@@ -1,0 +1,34 @@
+.dashboard-page {
+  .dashboard-header {
+    @include media-breakpoint-down(lg) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__heading {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+
+    @include media-breakpoint-down(lg) {
+      margin-top: 0;
+    }
+  }
+  &__current-date {
+    color: theme-color("primary-blue-dark");
+    font-family: $font-family-BasierCircle-SemiBold;
+    @include rem(font-size, $font-size-20);
+    @include rem(letter-spacing, 2px);
+    @include rem(line-height, 32px);
+    margin-bottom: 50px;
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $font-size-18);
+      @include rem(line-height, 30px);
+      margin-bottom: 25px;
+    }
+  }
+}

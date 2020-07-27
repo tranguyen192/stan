@@ -1,0 +1,519 @@
+html {
+  scroll-behavior: smooth;
+  background-color: theme-color("light");
+}
+html body {
+  height: 100%;
+  font-size: 62.5%; // for px to rem conversion
+  overflow-x: hidden; // hide horizontal scroll bar
+  background-color: theme-color("light");
+
+  a:focus {
+    outline: none;
+    border-bottom: 3px solid theme-color("primary-yellow");
+
+    .exam__subject {
+      border-color: theme-color("primary-yellow");
+      box-shadow: 10px 10px 0px -2px theme-color("primary-yellow");
+      color: theme-color("dark");
+    }
+  }
+  *:focus {
+    outline: 3px solid theme-color("primary-yellow");
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-bottom: 2px solid theme-color("success");
+  }
+
+  h1 {
+    color: theme-color("dark");
+    font-family: $font-family-BasierCircle-Bold;
+    @include rem(font-size, $h1-font-size);
+    @include rem(line-height, $h1-line-height);
+    @include rem(letter-spacing, 0);
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $h1-font-size-mobile);
+      @include rem(line-height, $h1-line-height-mobile);
+      @include rem(letter-spacing, 0);
+    }
+  }
+
+  h2 {
+    margin-top: 5rem;
+    color: theme-color("dark");
+    font-family: $font-family-BasierCircle-Bold;
+    @include rem(font-size, $h2-font-size);
+    @include rem(letter-spacing, 0);
+    @include rem(line-height, $h2-line-height);
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 2rem;
+      @include rem(font-size, $h2-font-size-mobile);
+      @include rem(line-height, $h2-line-height-mobile);
+      @include rem(letter-spacing, 0);
+    }
+  }
+
+  h3 {
+    color: theme-color("dark");
+    font-family: $font-family-BasierCircle-Bold;
+    @include rem(font-size, $h3-font-size);
+    @include rem(letter-spacing, 1.5px);
+    @include rem(line-height, $h3-line-height);
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $h3-font-size-mobile);
+      @include rem(line-height, $h3-line-height-mobile);
+      @include rem(letter-spacing, 1px);
+    }
+  }
+
+  h4 {
+    color: theme-color("dark");
+    font-family: $font-family-BasierCircle-SemiBold;
+    @include rem(font-size, $h4-font-size);
+    @include rem(letter-spacing, 1px);
+    @include rem(line-height, $h4-line-height);
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $h4-font-size-mobile);
+      @include rem(line-height, $h4-line-height-mobile);
+      @include rem(letter-spacing, 0.5px);
+    }
+  }
+
+  h5 {
+    color: theme-color("dark");
+    font-family: $font-family-BasierCircle-SemiBold;
+    @include rem(font-size, $h5-font-size);
+    @include rem(letter-spacing, 0);
+    @include rem(line-height, $h5-line-height);
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $h5-font-size-mobile);
+      @include rem(line-height, $h5-line-height-mobile);
+      @include rem(letter-spacing, 0);
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  li {
+    font-family: $font-family-OpenSans-Regular;
+    @include rem(font-size, $font-size-16);
+    list-style: none;
+
+    &::before {
+      content: ".";
+      padding: 0 10px 0 0;
+      @include rem(font-size, 25px);
+      font-family: $font-family-BasierCircle-SemiBold;
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $font-size-14);
+    }
+  }
+
+  p {
+    font-family: $font-family-OpenSans-Regular;
+    @include rem(font-size, $font-size-16);
+    letter-spacing: 0;
+    @include rem(line-height, 22px);
+    margin: 0;
+    max-width: 65ch;
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $font-size-14);
+      @include rem(line-height, 18px);
+    }
+  }
+
+  a {
+    color: theme-color("dark");
+    font-family: $font-family-OpenSans-Regular;
+    @include rem(font-size, $font-size-16);
+    letter-spacing: 0;
+    @include rem(line-height, 22px);
+    transition: all 200ms ease-in-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: theme-color("primary-yellow");
+      text-decoration: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $font-size-14);
+      @include rem(line-height, 18px);
+    }
+  }
+
+  span {
+    font-family: $font-family-OpenSans-Regular;
+    @include rem(font-size, $font-size-14);
+    letter-spacing: 0;
+    @include rem(line-height, 20px);
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  li,
+  p,
+  a,
+  span,
+  label,
+  input {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  strong {
+    font-family: $font-family-BasierCircle-SemiBold;
+  }
+
+  label {
+    color: theme-color("dark");
+    font-family: $font-family-BasierCircle-SemiBold;
+    @include rem(font-size, $font-size-16);
+    @include rem(letter-spacing, 0.2px);
+    @include rem(line-height, 20px);
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, $font-size-16);
+      @include rem(line-height, 18px);
+    }
+  }
+
+  .input-required {
+    &::after {
+      content: "*";
+      color: theme-color("error");
+    }
+  }
+
+  input {
+    border: none;
+    border-bottom: 2px solid;
+    border-color: theme-color("dark");
+    padding: 5px 2px;
+    color: theme-color("dark");
+    background-color: transparent;
+    @include rem(font-size, $font-size-16);
+    @include rem(letter-spacing, 0.2px);
+    @include rem(line-height, 25px);
+    min-width: 95px;
+    width: 100%;
+  }
+
+  input[type="date"] {
+    text-transform: uppercase;
+  }
+
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: theme-color("grey-dark");
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: theme-color("grey-dark");
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: theme-color("grey-dark");
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: theme-color("grey-dark");
+  }
+
+  input[type="file"] {
+    border: none;
+    margin: 2px 0;
+
+    &:focus {
+      outline: 3px solid theme-color("primary-yellow");
+    }
+
+    &::-webkit-file-upload-button {
+      border: 2px solid theme-color("dark");
+      color: theme-color("dark");
+      background-color: theme-color("light");
+      font-family: $font-family-BasierCircle-SemiBold;
+      @include rem(font-size, $font-size-14);
+      @include rem(letter-spacing, 1.5px);
+      @include rem(line-height, 20px);
+      text-transform: uppercase;
+      padding: 5px 10px;
+      transition: all 200ms ease-in-out;
+      cursor: pointer;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: theme-color("dark");
+        color: theme-color("light");
+      }
+    }
+  }
+
+  .DayPicker-Day {
+    padding: 0.4em;
+  }
+  .DayPickerInput {
+    input {
+      width: 100%;
+    }
+  }
+
+  .fade.show.tooltip.bs-tooltip-top {
+    @include rem(font-size, $font-size-14);
+    @include rem(letter-spacing, 0.5px);
+    font-family: $font-family-BasierCircle-SemiBold;
+    text-transform: initial;
+    z-index: 1;
+    border: 2px solid;
+    border-color: theme-color("light");
+    padding: 5px 5px;
+    background-color: theme-color("dark");
+    opacity: 1;
+
+    .arrow {
+      display: none;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 146px;
+    border: none;
+    border-bottom: 2px solid;
+    border-color: theme-color("dark");
+    padding: 5px 15px;
+    color: theme-color("dark");
+    background-color: transparent;
+    @include rem(font-size, $font-size-16);
+    @include rem(letter-spacing, 0.2px);
+    @include rem(line-height, 32px);
+  }
+
+  .hide-visually {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+
+  .box-content {
+    margin-bottom: 30px;
+    border: 4px solid;
+    border-color: theme-color("dark");
+    box-shadow: 10px 10px 0px -2px theme-color("dark");
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 20px;
+    }
+  }
+
+  #retype-password-error {
+    display: none;
+    padding-left: 25px;
+  }
+
+  .error {
+    color: theme-color("error-hover");
+    margin: 2px 10px 0 0;
+  }
+
+  .success {
+    color: theme-color("success");
+    margin-top: 2px;
+  }
+
+  .error-handling-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .graphql-error {
+    text-align: left;
+    max-width: none;
+    width: 100%;
+    margin: 15px 25px;
+
+    &.error-completion {
+      margin: 15px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+      margin: 15px 0;
+    }
+  }
+
+  .graphql-popup-error {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .fadeOut {
+    display: none;
+  }
+  .fadeIn {
+    display: block;
+  }
+
+  .sub-heading {
+    padding-bottom: 30px;
+    color: theme-color("primary-blue-dark");
+    text-transform: lowercase;
+    font-family: $font-family-BasierCircle-SemiBold;
+    letter-spacing: 2px;
+    @include rem(font-size, 20px);
+  }
+
+  .content {
+    margin-left: 220px;
+    transition: all 0.3s ease-in;
+
+    @include media-breakpoint-down(md) {
+      padding: 70px 30px 0 30px;
+      margin: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 70px 20px 0 20px;
+    }
+  }
+
+  .list-style {
+    list-style: none;
+    @include rem(font-size, 20px);
+    font-family: $font-family-BasierCircle-SemiBold;
+    margin-bottom: 10px;
+
+    &::before {
+      content: ".";
+      padding: 0 10px 0 0;
+      font-family: $font-family-BasierCircle-SemiBold;
+      @include rem(font-size, 25px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, 18px);
+    }
+  }
+
+  .list-style-none {
+    list-style: none;
+    @include rem(font-size, 20px);
+    font-family: $font-family-BasierCircle-SemiBold;
+    margin-bottom: 10px;
+
+    &::before {
+      display: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, 18px);
+    }
+  }
+}
+
+.loading {
+  visibility: hidden;
+}
+
+// SUCCESS MESSAGES
+#success-container-edit-user,
+#success-container-edit-exam,
+#success-container-edit-mascot,
+#success-container-add-new,
+#success-container-mascot-saved {
+  display: none;
+  .success {
+    display: flex;
+    justify-content: flex-end;
+    max-width: none;
+    margin-top: 20px;
+
+    @include media-breakpoint-down(sm) {
+      justify-content: center;
+    }
+  }
+}
+
+#success-save-password,
+#success-container-delete-user,
+#success-container-exam-detail {
+  display: none;
+  .success {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#forgotten-password-error {
+  display: none;
+  p {
+    text-align: center;
+    max-width: none;
+  }
+}
+
+#success-container-forgotten-password {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: theme_color("light");
+  max-width: 50rem;
+  padding: 80px 75px;
+  z-index: 10;
+
+  p {
+    max-width: none;
+  }
+
+  button {
+    text-decoration: none;
+    border-bottom: 2px solid;
+    border-color: theme-color("dark");
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: theme-color("primary-yellow");
+      border-color: theme-color("primary-yellow");
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 40px 37.5px;
+  }
+}

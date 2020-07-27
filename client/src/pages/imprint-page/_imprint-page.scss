@@ -1,0 +1,60 @@
+@keyframes swing {
+  0% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+
+.imprint {
+  &__headline {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 50px;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__team {
+    &--mascot {
+      width: 280px;
+      position: absolute;
+      top: -20px;
+      right: 5%;
+      z-index: 0;
+      animation: swing ease-in-out 1s infinite alternate;
+      transform-origin: center -20px;
+
+      &:after {
+        transform: rotate(45deg);
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+  }
+  &__team,
+  &__address,
+  &__contact-details,
+  &__copyright {
+    margin: 25px 0;
+  }
+
+  &__contact-details {
+    &--link {
+      border-bottom: 1px solid theme-color("dark");
+    }
+    &--block {
+      p {
+        padding: 5px 0;
+      }
+    }
+  }
+}

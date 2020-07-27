@@ -1,0 +1,519 @@
+// color themes ----------------
+html.dark-mode {
+  background-color: theme-color("dark-mode") !important;
+  transition: all 500ms ease-in-out;
+
+  body {
+    transition: all 500ms ease-in-out;
+    background-color: theme-color("dark-mode") !important;
+    color: theme-color("light");
+  }
+
+  // general ----------------
+  // white in dark theme
+  .stan-btn-primary {
+    background-color: theme-color("light");
+    border-color: theme-color("light");
+    color: theme-color("dark-mode");
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: theme-color("dark-mode");
+      color: theme-color("light");
+    }
+  }
+  // dark + white border in light theme
+  .stan-btn-secondary {
+    background-color: theme-color("dark-mode");
+    border-color: theme-color("light");
+    color: theme-color("light");
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: theme-color("light");
+      color: theme-color("dark-mode");
+    }
+  }
+  // logged out w/ hover animation
+  .stan-btn-double {
+    background-color: theme-color("dark-mode");
+    border-color: theme-color("light");
+    box-shadow: 5px 5px 0px 0px theme-color("light");
+
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: 8px 8px 0px 0px theme-color("light");
+      color: theme-color("light");
+    }
+  }
+  .dark-mode-btn {
+    color: theme-color("light");
+    border-color: theme-color("dark-mode");
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: theme-color("primary-yellow");
+    }
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid theme-color("primary-yellow");
+    }
+  }
+
+  // "double-box" look
+  .box-content {
+    border-color: theme-color("light");
+    box-shadow: 10px 10px 0px -2px theme-color("light");
+  }
+  .today.box-content {
+    border-color: theme-color("primary-yellow-dark");
+    box-shadow: 10px 10px 0px -2px theme-color("primary-yellow-dark");
+  }
+  .sub-heading {
+    color: theme-color("primary-blue");
+  }
+  .error {
+    color: theme-color("error");
+
+    p {
+      color: theme-color("error");
+    }
+  }
+  .error.forgotten-password-error {
+    p {
+      color: theme-color("error");
+    }
+  }
+  .query-error__inner {
+    background-color: theme-color("dark-mode");
+  }
+  .success {
+    color: theme-color("success");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  ul,
+  li,
+  span,
+  label,
+  input {
+    color: theme-color("light");
+  }
+
+  input,
+  textarea {
+    border-color: theme-color("light");
+    color: theme-color("light");
+  }
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: theme-color("grey-light");
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: theme-color("grey-light");
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: theme-color("grey-light");
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: theme-color("grey-light");
+  }
+
+  .loader {
+    background-color: theme-color("dark-mode");
+
+    .square {
+      background: theme-color("light");
+    }
+  }
+  // ----------------------------------------------------------------
+  // navigation ----------------
+  .navigation {
+    &__items {
+      background-color: theme-color("dark-mode");
+      border-right: 4px solid theme-color("light");
+      transition: background-color 500ms ease-in-out;
+    }
+  }
+  .menu-top {
+    .dashboard {
+      &:before {
+        content: url("../../images/icons/dashboard-light.svg");
+      }
+    }
+    .add-new {
+      &:before {
+        content: url("../../images/icons/add-new-light.svg");
+      }
+    }
+    .calendar {
+      &:before {
+        content: url("../../images/icons/calendar-light.svg");
+      }
+    }
+    .exams {
+      &:before {
+        content: url("../../images/icons/exams-light.svg");
+      }
+    }
+    .profile {
+      .user-avatar {
+        border-color: theme_color("light");
+      }
+    }
+  }
+  .burger {
+    background-color: theme_color("dark-mode");
+    border-color: theme_color("light");
+
+    &__btn {
+      &__line {
+        background: theme-color("light");
+      }
+    }
+  }
+  .navigation__items--list .menu-bottom .logout button {
+    color: theme-color("light");
+    border-color: theme-color("dark-mode");
+  }
+  // ----------------------------------------------------------------
+  // dashboard ----------------
+  .dashboard-page__current-date {
+    color: theme-color("primary-blue");
+  }
+  .current-state {
+    border-color: theme_color("light");
+  }
+  .today-goals__container {
+    &__header {
+      border-color: theme-color("light");
+    }
+    &__warning__text--warning {
+      color: theme-color("error");
+    }
+  }
+  .today {
+    background-color: theme-color("dark-mode");
+
+    &__container {
+      &__header {
+        border-color: theme-color("light");
+      }
+      &__content__text--warning {
+        color: theme-color("error");
+      }
+      &__buttons__open {
+        border-color: theme_color("light");
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-color: theme-color("primary-yellow");
+        }
+      }
+    }
+  }
+  .timeline__bar__percentage {
+    border-color: theme-color("light");
+
+    &:after {
+      background-color: theme-color("light");
+    }
+  }
+  // ----------------------------------------------------------------
+  // add new ----------------
+  .add-new__heading {
+    border-color: theme-color("light");
+  }
+  .DayPicker-wrapper {
+    background-color: theme-color("dark-mode");
+    border: 4px solid theme-color("light");
+
+    .DayPicker-Weekday {
+      color: theme-color("grey-light");
+    }
+    .DayPicker-Day {
+      color: theme-color("primary-yellow");
+
+      &--today {
+        color: theme-color("primary-blue-dark") !important;
+      }
+      &--disabled {
+        color: theme-color("grey-dark") !important;
+      }
+      &--selected {
+        background-color: theme-color("primary-blue-dark") !important;
+      }
+    }
+    .DayPicker:not(.DayPicker--interactionDisabled)
+      .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+      background-color: red !important;
+    }
+  }
+  .info-circle {
+    background-color: theme_color("light");
+    color: theme_color("dark-mode");
+  }
+  .fade.show.tooltip.bs-tooltip-top {
+    color: theme-color("dark-mode");
+    border-color: theme-color("dark-mode");
+    background-color: theme-color("light");
+
+    .tooltip-inner {
+      color: theme-color("dark-mode");
+      background-color: theme-color("light");
+    }
+  }
+
+  // ----------------------------------------------------------------
+  // calendar ----------------
+  .fc-header-toolbar .fc-right .fc-button-primary {
+    color: theme-color("light");
+
+    &:after {
+      background-color: theme_color("light");
+    }
+  }
+  .fc-view {
+    border-color: theme-color("light");
+    box-shadow: 10px 10px 0px -2px theme-color("light");
+  }
+  .fc-unthemed th,
+  .fc-unthemed td,
+  .fc-unthemed thead,
+  .fc-unthemed tbody,
+  .fc-unthemed .fc-divider,
+  .fc-unthemed .fc-row,
+  .fc-unthemed .fc-content,
+  .fc-unthemed .fc-popover,
+  .fc-unthemed .fc-list-view,
+  .fc-unthemed .fc-list-heading td,
+  table.fc-list-table {
+    border-color: theme-color("light");
+  }
+
+  .fc-content.fc-title,
+  .fc-list-heading-main,
+  .fc-list-heading-alt {
+    color: inherit;
+  }
+  .fc-widget-header {
+    background-color: theme-color("dark-mode") !important;
+
+    a {
+      color: theme-color("light") !important;
+    }
+  }
+  .fade.show {
+    color: theme-color("light");
+    border-color: theme-color("light");
+    background-color: theme-color("dark-mode");
+  }
+  .popover {
+    border-color: theme_color("light");
+    background-color: theme-color("dark-mode");
+  }
+  .popover-header {
+    border-color: theme_color("light");
+  }
+  .bs-popover-top > .arrow::after,
+  .bs-popover-auto[x-placement^="top"] > .arrow::after {
+    border-top-color: theme-color("dark-mode");
+  }
+  .bs-popover-top > .arrow::before,
+  .bs-popover-auto[x-placement^="top"] > .arrow::before,
+  .bs-popover-auto[x-placement^="top"] > .arrow::before {
+    border-top-color: theme-color("light");
+  }
+  // ----------------------------------------------------------------
+  // exams ----------------
+  .exam__subject {
+    &:hover {
+      box-shadow: 0px 0px 0px 0px theme-color("light");
+    }
+  }
+  .exams__archiveExamsToggle i {
+    border-color: theme_color("light");
+  }
+  .exam-details {
+    &__headline {
+      &--back-btn {
+        &:before,
+        &:after {
+          background-color: theme_color("light");
+        }
+      }
+    }
+    &__inner--bar {
+      border-color: theme_color("light");
+
+      &--right {
+        color: theme-color("dark");
+        .exam-btn {
+          color: theme-color("light");
+        }
+      }
+    }
+    .delete-btn {
+      color: theme_color("error");
+      &:hover {
+        color: theme_color("error");
+      }
+    }
+    &__popup--inner {
+      background-color: theme-color("dark-mode");
+    }
+  }
+  .exam-bar {
+    border-color: theme_color("light");
+
+    &__filler {
+      background: theme_color("light");
+    }
+  }
+  .form__study-links--buttons {
+    button {
+      color: theme_color("light");
+    }
+  }
+  // ----------------------------------------------------------------
+  // profile ----------------
+  .user-account {
+    &__container {
+      &--left--bottom span {
+        color: theme_color("primary-blue");
+      }
+      &--left--top {
+        .buttons {
+          button {
+            color: theme-color("light");
+
+            &:hover,
+            &:active,
+            &:focus {
+              color: theme-color("primary-yellow");
+            }
+          }
+        }
+      }
+    }
+    &__edit--popup--inner {
+      background-color: theme-color("dark-mode");
+    }
+  }
+  button.back-button {
+    color: theme-color("light");
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: theme-color("primary-yellow");
+    }
+  }
+  .carousel .carousel-indicators li {
+    background-color: theme-color("light");
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next {
+    &:before {
+      border-color: theme_color("light");
+    }
+  }
+  .form__passwordToggle i {
+    border-color: theme_color("light");
+  }
+
+  .login__form__notifications {
+    &:hover input ~ .checkmark {
+      background-color: theme-color("light");
+    }
+    .checkmark {
+      background-color: theme-color("dark-mode");
+      border-color: theme-color("light");
+    }
+    input:checked ~ .checkmark {
+      background-color: theme-color("light");
+      border-color: theme-color("light");
+    }
+  }
+  .checkmark:after {
+    border-color: theme-color("dark-mode");
+  }
+  // ----------------------------------------------------------------
+  // login ----------------
+  .login__form {
+    &__redirect-signup__text {
+      color: theme-color("grey-dark");
+    }
+    &__bottom {
+      &--redirect-signup__text {
+        color: theme-color("grey-dark");
+      }
+
+      &--line {
+        span.line {
+          background-color: theme-color("light");
+        }
+      }
+
+      &--forgotten-password,
+      &--redirect-signup {
+        button {
+          color: theme-color("light");
+
+          &:hover,
+          &:active,
+          &:focus {
+            color: theme-color("primary-yellow");
+          }
+        }
+      }
+    }
+  }
+  #success-container-forgotten-password {
+    background-color: theme-color("dark-mode") !important;
+
+    button {
+      color: theme-color("light");
+      border-color: theme-color("light");
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: theme-color("primary-yellow");
+        border-color: theme-color("primary-yellow");
+      }
+    }
+  }
+  // ----------------------------------------------------------------
+  // imprint ----------------
+  .imprint__contact-details--link {
+    border-color: theme-color("light");
+  }
+  .data-policy-page {
+    a {
+      border-color: theme-color("light");
+
+      &:focus,
+      &:active,
+      &:hover {
+        border-color: theme-color("primary-yellow");
+      }
+    }
+  }
+  // ----------------------------------------------------------------
+}

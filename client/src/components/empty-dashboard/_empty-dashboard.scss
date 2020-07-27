@@ -1,0 +1,69 @@
+.empty-dashboard {
+  text-align: center;
+  padding: 50px;
+
+  @include media-breakpoint-down(lg) {
+    margin: 0 10px 30px 0;
+  }
+  @include media-breakpoint-down(md) {
+    margin: 0 0 30px 0;
+    padding: 50px 30px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 40px 10px;
+  }
+
+  &__heading {
+    @include rem(font-size, $font-size-40);
+    @include rem(letter-spacing, 2px);
+    @include rem(line-height, 50px);
+
+    @include media-breakpoint-down(sm) {
+      @include rem(font-size, 27px);
+      @include rem(letter-spacing, 2px);
+      @include rem(line-height, 30px);
+    }
+  }
+
+  &__text {
+    margin: 25px auto;
+    padding: 0 70px;
+
+    @include media-breakpoint-down(md) {
+      padding: 0 50px;
+    }
+    @include media-breakpoint-down(sm) {
+      margin: 20px auto;
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+
+  &__upcoming {
+    margin-top: 40px;
+
+    &__heading {
+      margin-bottom: 15px;
+    }
+
+    &__list-item {
+      @include rem(font-size, 18px);
+      font-family: $font-family-BasierCircle-Regular;
+      margin-bottom: 5px;
+
+      @include media-breakpoint-down(sm) {
+        @include rem(font-size, 16px);
+      }
+
+      &::before {
+        display: none;
+      }
+
+      a {
+        border-bottom: 2px solid;
+      }
+    }
+  }
+}

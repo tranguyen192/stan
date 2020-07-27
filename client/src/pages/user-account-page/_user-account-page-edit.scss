@@ -1,0 +1,212 @@
+.user-account {
+  &__edit {
+    padding: 20px;
+
+    .edit-form-bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      @include media-breakpoint-down(sm) {
+        flex-wrap: wrap;
+      }
+    }
+    &--form {
+      margin: 40px 15px;
+
+      &__button {
+        margin-top: 40px;
+
+        @include media-breakpoint-down(sm) {
+          width: 100%;
+        }
+        @include media-breakpoint-down(lg) {
+          text-align: right;
+        }
+      }
+    }
+
+    &__carousel {
+      margin: 25px 25px 0 25px;
+      display: flex;
+      flex-direction: column;
+
+      h4 {
+        padding-bottom: 20px;
+      }
+    }
+
+    &--heading {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: 3px solid theme_color("black");
+      padding: 5px 0;
+      margin: 5px;
+
+      @include media-breakpoint-down(sm) {
+        flex-direction: column-reverse;
+      }
+      &--delete-btn {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        @include media-breakpoint-down(xs) {
+          justify-content: flex-end;
+          padding-bottom: 10px;
+        }
+
+        .back-button {
+          transition: all 0.3s ease;
+          &:hover {
+            color: theme_color("primary-yellow");
+          }
+        }
+        .delete-button {
+          color: theme_color("error-hover");
+          margin-left: 18px;
+        }
+        a,
+        button {
+          border: none;
+          background: none;
+          box-shadow: none;
+          outline: none;
+          text-transform: lowercase;
+          padding: 0;
+          margin-left: 0;
+          font-family: $font-family-OpenSans-Regular;
+
+          @include rem(font-size, $font-size-16);
+          letter-spacing: 0;
+          @include rem(line-height, 22px);
+          margin: 0;
+          max-width: 65ch;
+
+          @include media-breakpoint-down(sm) {
+            @include rem(font-size, $font-size-14);
+            @include rem(line-height, 18px);
+          }
+        }
+      }
+    }
+
+    &--popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 250;
+      overflow: auto;
+
+      &--inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: theme_color("light");
+        padding-bottom: 20px;
+
+        &--headline {
+          padding: 50px 50px 40px 50px;
+
+          @include media-breakpoint-down(xs) {
+            text-align: center;
+          }
+        }
+
+        &--buttons {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 0 50px;
+
+          @include media-breakpoint-down(xs) {
+            flex-direction: column;
+          }
+
+          @include media-breakpoint-down(md) {
+            button {
+              margin: 5px 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.form {
+  &__element {
+    &--headline {
+      padding-bottom: 20px;
+    }
+  }
+  &__passwordToggle {
+    padding: 20px 0;
+
+    &--button {
+      display: flex;
+      flex-direction: row;
+      border: none;
+      color: theme-color("dark");
+      transition: all 0.3s ease;
+      background: none;
+      margin-left: 25px;
+      padding-left: 0;
+
+      &:focus {
+        outline: none;
+        border-bottom: 3px solid theme-color("primary-yellow");
+      }
+    }
+
+    i {
+      border: solid;
+      border-color: theme_color("dark");
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      margin-top: 6px;
+      margin-left: 8px;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 2px;
+      }
+    }
+
+    .arrow {
+      transition: transform 0.2s;
+    }
+    .right {
+      transform: rotate(-45deg);
+    }
+    .down {
+      transform: rotate(45deg);
+    }
+  }
+  &__notifications {
+    margin: 0 0 0 8px !important;
+    padding-bottom: 0 !important;
+
+    label {
+      @include media-breakpoint-down(sm) {
+        font-size: 14px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        font-size: 12px;
+      }
+
+      input {
+        &:focus + span {
+          border-color: theme-color("primary-yellow") !important;
+        }
+      }
+    }
+  }
+}

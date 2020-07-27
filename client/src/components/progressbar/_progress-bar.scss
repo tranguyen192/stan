@@ -1,0 +1,15 @@
+.exam-bar {
+  position: relative;
+  height: 15px;
+  width: 100%;
+  border: 2px solid;
+  border-color: theme_color("dark");
+
+  &__filler {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: theme_color("dark");
+    height: 100%;
+  }
+}

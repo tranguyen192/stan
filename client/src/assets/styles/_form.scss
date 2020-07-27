@@ -1,0 +1,126 @@
+.form {
+  &__left {
+  }
+  &__right {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+    }
+
+    &--numbers {
+      .add-new__form__element {
+        @include media-breakpoint-down(xl) {
+          width: 150px;
+        }
+        @include media-breakpoint-down(lg) {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  &__element {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 25px 25px;
+
+    &__label {
+    }
+    &__input {
+    }
+  }
+
+  &__current-study-links {
+    padding: 25px 0;
+
+    .form__element {
+      margin: 0 25px;
+    }
+  }
+
+  &__showColor {
+    margin-top: 20px;
+    .color {
+      width: 100%;
+      height: 12px;
+      border: 1px solid lightgrey;
+    }
+    h5 {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__study-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 !important;
+    height: 45px;
+
+    @include media-breakpoint-down(xs) {
+      display: block;
+      height: 90px;
+    }
+
+    &--input {
+      flex: 1;
+    }
+
+    &.current-study-links {
+      height: 45px;
+
+      input {
+        border-bottom: none;
+        color: theme_color("grey-dark");
+      }
+    }
+
+    &--buttons {
+      @include media-breakpoint-down(lg) {
+        margin-right: 11px;
+      }
+      @include media-breakpoint-down(xs) {
+        text-align: right;
+      }
+
+      button {
+        margin: 0 16px;
+        font-size: 25px;
+        background: none;
+        border: none;
+
+        &:focus {
+          outline: 3px solid theme-color("primary-yellow");
+        }
+
+        @include media-breakpoint-down(lg) {
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+  &__color-picker {
+    .info-box-label {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+
+    @include media-breakpoint-down(xs) {
+      justify-content: center;
+    }
+  }
+}

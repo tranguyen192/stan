@@ -1,0 +1,76 @@
+image: node:latest
+# stages:
+#   - npm
+#   - lint
+#   - test
+#   - staging
+#   - deployment
+
+npm:client:
+  tags:
+    - node
+  stage: npm
+  artifacts:
+    paths:
+      - client/node_modules/
+    expire_in: 1 days
+    when: always
+  script:
+    - cd client/
+    - echo "Running npm ci ..."
+    - npm ci
+  except:
+    - /^back-feature.*$/
+    # TODO: change when testing in client:
+    - /^front-feature.*$/
+
+lint:client:
+  stage: lint
+  tags:
+    - node
+  script:
+    - cd client/
+    - echo "Linting.."
+    - npm run format
+  except:
+    - /^front-feature.*$/
+    - /^back-feature.*$/
+
+staging:client:
+  stage: staging client
+  artifacts:
+    paths:
+      - server/public/
+    expire_in: 1 week
+  tags:
+    - node
+  script:
+    - rm -rf server/public
+    - mkdir server/public
+    - cd client/
+
+    # #TODO: remove CI=false - so it treats warnings as errors again
+    - CI=false npm run build
+
+  only:
+    - development
+
+deployment:client:
+  stage: deployment client
+  artifacts:
+    paths:
+      - server/public/
+    expire_in: 1 week
+  tags:
+    - node
+  script:
+    - rm -rf server/public
+    - mkdir server/public
+    - cd client/
+
+    # #TODO: remove CI=false - so it treats warnings as errors again
+    - CI=false npm run build
+
+  only:
+    - master
+    - /^release.*$/
