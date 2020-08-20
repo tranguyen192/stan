@@ -40,7 +40,7 @@
     "apollo-server-express": "^2.9.16",
     "apollo-server-integration-testing": "^2.3.0",
     "apollo-server-testing": "^2.11.0",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "compression": "^1.7.4",
     "concurrently": "^5.0.2",
     "connect-timeout": "^1.9.0",
